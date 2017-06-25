@@ -1,0 +1,179 @@
+
+
+<div style="margin-top: 45px">
+	<form class="form-horizontal" ng-submit="addequipement()">
+		<fieldset>
+			<legend>
+				<h2 style="color: cadetblue">Bilan de puissance de tous les
+					équipements de l'installation</h2>
+			</legend>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-3 control-label">TELEVISEURS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.televiseur.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.televiseur.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.televiseur.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">REFRIGERATEURS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.refrigerateur.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.refrigerateur.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.refrigerateur.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">CLIMATISEURS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.climatiseur.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.climatiseur.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.climatiseur.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">CONGELATEURS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.congelateur.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.congelateur.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.congelateur.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">RADIO</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.radio.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.radio.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.radio.temps" />
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-3 control-label">LAMPES</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.lampe.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.lampe.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.lampe.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">DESTOPS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.destop.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.destop.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.destop.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">MODEMS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.modem.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.modem.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.modem.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">LAPTOPS</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.laptop.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.laptop.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.laptop.temps" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-3 control-label">AUTRES</label>
+					<div class="col-md-3">
+						<input type="text" placeholder="puissance" class="form-control"
+							ng-model="equipement.autre.puissance" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="quantité" class="form-control"
+							ng-model="equipement.autre.quantite" />
+					</div>
+					<div class="col-md-3">
+						<input type="text" placeholder="temps" class="form-control"
+							ng-model="equipement.autre.temps" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-5" style="margin-top: 25px; margin-left: 20px">
+					<input type="reset" value="annuler"
+						class="form-control btn btn-danger">
+				</div>
+				<div class="col-md-5" style="margin-top: 25px; margin-left: 20px">
+					<input type="submit" value="valider"
+						class="form-control btn btn-primary">
+				</div>
+			</div>
+
+		</fieldset>
+
+	</form>
+</div>
+{{equipement}}
