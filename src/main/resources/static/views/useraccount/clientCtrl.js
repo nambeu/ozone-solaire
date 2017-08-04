@@ -8,7 +8,7 @@ app.controller("clientCtrl", function($scope, $state, ClientService) {
 		console.log($scope.client);
 		$scope.client.$save( function() {
 			console.log($scope.client)
-			$state.go("city");
+			$state.go("manuelcity");
 		});
 	};
 });
