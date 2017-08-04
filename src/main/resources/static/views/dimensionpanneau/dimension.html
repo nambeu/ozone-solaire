@@ -1,0 +1,73 @@
+<br />
+<div class="intro-headers container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 well">
+			<form class="form-horizontal" ng-submit="dimensionvalid()"
+				name="form" method="post">
+				<fieldset>
+					<legend>
+						<h2 style="color: cadetblue">Dimension du Panneau</h2>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-12"
+							style="font-size: 20px; color: rgb(128, 128, 128)">
+							<label class="control-label">Longueur</label>
+						</div>
+						<div class="col-md-12">
+							<input type="number" class="form-control" name="longueur"
+								placeholder="Entrer la longueur" ng-model="dimension.longueur"
+								required>
+						</div>
+					</div>
+					<div class="col-md-12"
+						ng-show="form.longueur.$dirty && form.longueur.$invalid">
+						<div class="alert alert-danger"
+							ng-show="form.longueur.$error.required">
+							<span class="glyphicon glyphicon-exclamation-sign"
+								aria-hidden="true"></span> <span class="sr-only">Error:</span>
+							Entrer la longueur du panneau
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-12"
+							style="font-size: 20px; color: rgb(128, 128, 128)">
+							<label class="control-label">Largeur</label>
+						</div>
+						<div class="col-md-12">
+							<input type="number" class="form-control" name="largeur"
+								required="required" placeholder="entrer la largeur"
+								ng-model="dimension.largeur">
+						</div>
+
+					</div>
+					<div class="col-md-12"
+						ng-show="form.largeur.$dirty && form.largeur.$invalid">
+						<div class="alert alert-danger"
+							ng-show="form.largeur.$error.required">
+							<span class="glyphicon glyphicon-exclamation-sign"
+								aria-hidden="true"></span> <span class="sr-only">Error:</span>Entrer
+							la largeur du panneau
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<input type="reset" class="btn btn-danger btn-block btn-lg"
+								value="annuler">
+						</div>
+						<div class="col-md-6">
+							<input type="submit" class="btn btn-primary btn-block btn-lg"
+								ng-disabled="form.$error.required" value="valider">
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	{{dimension}}
+</div>
+
+
+

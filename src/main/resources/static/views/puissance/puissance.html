@@ -1,63 +1,82 @@
 
-<h1 class="text-center" style="color:cadetblue">Bilan des puissance de l'installation</h1> <hr>
-
-<div class="col-md-7 col-md-offset-2" style="margin-top:45px">
-	<form class="form-horizontal">
-		<fieldset>
-			<legend><h2 style="color: cadetblue"> Panneaux solaires</h2> </legend>
-			<div class="form-group">
-				<div class="col-md-4">
-					<label>TENSION DU PV</label>
-				</div>
-				<div class="col-md-7">
-					<input type="text" placeholder="Tension Pv" class="form-control" ng-model="puissance.tensionPv" />
-				</div> <div class="col-md-1"><span>watts</span></div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-4">
-					<label>PUISSANCE DU PV</label>
-				</div>
-				<div class="col-md-7">
-					<input type="text" class="form-control"
-						placeholder="puissance du Pv" ng-model="puissance.puissancePv" />
-				</div><div class="col-md-1 center"><span>watts</span></div>
-			</div>
-			<legend>
-				<h2 style="color: cadetblue; margin-top: 35px">Batteries solaires étanches</h2>
-			</legend>
-			<div class="form-group">
-				<div class="col-md-4">
-					<label>TENSION BATTERIE</label>
-				</div>
-				<div class="col-md-7">
-					<input type="text" class="form-control"
-						placeholder="Tension Ba"  ng-model="puissance.tensionBa" />
-				</div><div class="col-md-1"><span>volts</span></div>
-			</div>
-			<div class="form-group">
-				<div class="col-md-4">
-					<label>CAPACITE BATTERIE</label>
-				</div>
-				<div class="col-md-7">
-					<input type="text" class="form-control"
-						placeholder="capacité Ba" ng-model="puissance.capaciteBa" />
-				</div> <div class="col-md-1"><span>watts</span></div>
-			</div>
-			<div class="form-group" style="margin-left: 20px; margin-top:30px">
-				<div class="col-md-5">
-					<div>
-						<input type="reset" class="form-control btn btn-danger	"
-							value="Annuler" />
+<div class="intro-headers container">
+  <a class="btn btn-danger">retour</a>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 well">
+		<h1 style="color: cadetblue;">Bilan des
+		puissances de l'installation</h1>
+			<form class="form-horizontal" method="post"
+				ng-submit="createPuissance()">
+				<fieldset>
+					<legend>
+						<h3 style="color: cadetblue">Panneaux solaires</h3>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">TENSION DU PV</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" placeholder="Tension Pv" class="form-control"
+								ng-model="puissance.tensionPv" />
+						</div>
+						<div class="col-md-1">
+							<span>watts</span>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-5">
-					<div>
-						<input type="submit" class="form-control btn btn-primary"
-							value="Devis" />
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">PUISSANCE DU PV</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control"
+								placeholder="puissance du Pv" ng-model="puissance.puissancePv" />
+						</div>
+						<div class="col-md-1 center">
+							<span>watts</span>
+						</div>
 					</div>
-				</div>
-			</div>
-		</fieldset>
-	</form>
+					<legend>
+						<h3 style="color: cadetblue; margin-top: 35px">Batteries
+							solaires étanches</h3>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">TENSION BATTERIE</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control" placeholder="Tension Ba"
+								ng-model="puissance.tensionBatterie" />
+						</div>
+						<div class="col-md-1">
+							<span>volts</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">CAPACITE BATTERIE</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control" placeholder="capacité Ba"
+								ng-model="puissance.capaciteBatterie" />
+						</div>
+						<div class="col-md-1">
+							<span>watts</span>
+						</div>
+					</div>
+					<div class="form-group" style="margin-top: 30px">
+						<div class="col-md-6">
+							<input type="reset" class="btn btn-danger btn-block btn-lg"
+								value="Annuler" />
+						</div>
+						<div class="col-md-6">
+							<input type="submit" class=" btn btn-primary btn-block btn-lg"
+								value="Valider" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	{{puissance}}
 </div>
-  {{puissance}}
+

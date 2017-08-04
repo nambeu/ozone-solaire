@@ -1,0 +1,56 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class=" container">
+<a class="btn btn-danger pull-right">retour</a>
+	<div class="well">
+		<div class="col-md-7 col-md-offset-3">
+			<form class="form-horizontal" ng-submit="citySearch()"
+				name="form_cible">
+				<fieldset>
+					<legend>
+						<h2 style="color: cadetblue; margin-left: 30px;">Coordonnées
+							de la Ville</h2>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-8">
+							<input type="text" class="form-control input-lg"
+								name="cible_ville" ng-model="city.name"
+								placeholder="Entrer votre ville" required="required">
+						</div>
+
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-primary btn-block btn-lg"
+								ng-disabled="form_cible.cible_ville.$error.required">Valider</button>
+						</div>
+					</div>
+					<div class="col-md-8"
+						ng-show="form_cible.cible_ville.$dirty && form_cible.cible_ville.$invalid">
+						<div class="alert alert-danger" role="alert"
+							ng-show="form_cible.cible_ville.$error.required">
+							<span class="glyphicon glyphicon-exclamation-sign"
+								aria-hidden="true"></span> <span class="sr-only">Error:</span>
+							Ce Champ ne doit être vide !
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+		<br /> <br />
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<H3>Entrer Manuellement vos coordonnées</H3>
+				<a class="btn btn-success btn-lg" ui-sref="manuelcity">commencer
+					ici</a> <br />
+			</div>
+		</div>
+	</div>
+
+
+	{{city}}
+</div>

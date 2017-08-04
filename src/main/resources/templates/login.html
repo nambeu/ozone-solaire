@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="../static/vendor/bootstrap/dist/css/bootstrap.min.css"
+	th:href="@{vendor/bootstrap/dist/css/bootstrap.min.css}" />
+<style type="text/css">
+    .logoimg{
+          width: 100%;
+      }
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+    <br/> <br/> <br/> <br/> <br/> <br/>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<img src="image/logo/logoAsecy.png" class="logoimg" />
+			<form method="post" th:action="@{/login}">
+				<div class="form-group">
+					<label>Login</label> <input type="text" class="form-control"
+						name="username" placeholder="enter your login" />
+				</div>
+				<div class="form-group">
+					<label>Password</label> <input type="password" class="form-control"
+						name="password" placeholder="enter your Password" />
+				</div>
+					<!-- <div class="form-group">
+					<label>Remember Me</label> <input type="checkbox" />
+				</div>  -->
+				<div class="form-group">
+					<input type="submit" class="form-control btn btn-primary"
+						value="Sign in" />
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

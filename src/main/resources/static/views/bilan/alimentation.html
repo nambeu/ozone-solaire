@@ -1,0 +1,133 @@
+<div class="intro-headers">
+	<div>
+		<h1>Resultats des Bilans</h1>
+	</div>
+	<div class="row" ng-repeat="alimentation in alimentations">
+		<div class="col-md-7">
+			<div class="row">
+				<div class="col-md-12 tailleblock">
+					<h2>Panneaux Solaires</h2>
+					<div class="row altext">
+						<div class="col-md-6">Puissance Crête panneau :</div>
+						<div class="col-md-6" style="color: blue;">{{alimentation.pcp}}</div>
+						<div class="col-md-6 hum">
+							Nombre de PV en serie : <span style="color: blue;">{{alimentation.nombrePvSerie}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Nombre de PV : <span style="color: blue;">{{alimentation.nombreReelPv}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Nombre de PV en Parallele: <span style="color: blue;">{{alimentation.nombrePvParallele}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Tension du PV: <span style="color: blue;">{{alimentation.tensionPv}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Puissance du champs PV : <span style="color: blue;">{{alimentation.puissancePv}}</span>
+						</div>
+						<div class="col-md-6 hum	">
+							Tension du Champ Pv: <span style="color: blue;">{{alimentation.tensionChampPv}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 tailleblock" style="margin-top: 25px">
+					<h2>Batteries Solaires Etanches</h2>
+					<div class="row altext">
+						<div class="col-md-6 ">
+							Capacite Total des batteries : <span style="color: blue;">{{alimentation.capaciteTotalBatterie}}</span>
+						</div>
+						<div class="col-md-6 ">
+							Nombre de Batteries : <span style="color: blue;">{{alimentation.nombreBatterie}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Capacité Batterie : <span style="color: blue;">{{alimentation.capaciteBatterie}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Nombre de Batteries en Serie : <span style="color: blue;">{{alimentation.nombreBatterieSerie}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Tension Batterie: <span style="color: blue;">{{alimentation.tensionBatterie}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Nombre de Batteries en Parallele: <span style="color: blue;">{{alimentation.nombreBatterieParallele}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Tension du Champ Batterie: <span style="color: blue;">{{alimentation.tensionChampPv}}</span>
+						</div>
+						<div class="col-md-6 hum">
+							Nombre de Jour D'autonomie: <span style="color: blue;">{{alimentation.nbreJourAutonomie}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-5">
+			<div class="row" style="margin-left: 15px">
+				<div class="col-md-12 tailleblock">
+					<h2>Controlleur de Charge</h2>
+					<div class="row altext">
+						<div class="col-md-6 hum">Tension  Regulateur :</div>
+						<div class="col-md-6 hum">
+							<span style="color: blue;">{{alimentation.tensionChampPv}}</span>
+						</div>
+						<div class="col-md-6 hum">Intensité d'entrée :</div>
+						<div class="col-md-6 hum">
+							<span style="color: blue;">{{alimentation.intensiteEntree}}</span>
+						</div>
+						<div class="col-md-6 hum">Intensité de sortie :</div>
+						<div class="col-md-6 hum">
+							<span style="color: blue;">{{alimentation.intensiteSortie}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 tailleblock" style="margin-top: 25px">
+					<h2>Conversion</h2>
+					<div class="row altext">
+						<div class="col-md-6 ">Puissance de L'Onduleur :</div>
+						<div class="col-md-6 ">
+							<span style="color: blue;">{{alimentation.puissanceOnduleur}}</span>
+						</div>
+						<div class="col-md-6 hum">Tension en entrée :</div>
+						<div class="col-md-6 hum">
+							<span style="color: blue;">{{alimentation.tensionChampPv}}</span>
+						</div>
+						<div class="col-md-6 hum">Tension en sortie :</div>
+						<div class="col-md-6 hum">
+							<span style="color: blue;">230</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7 col-md-offset-3" style="margin-top: 25px; margin-bottom: 15px">
+			<h2>Dimension Du panneau Solaire</h2>
+			<div class="row altext">
+				<div class="col-md-6">
+					Longueur : <span style="color: blue;">{{alimentation.longueur}}</span>
+				</div>
+				<div class="col-md-6">
+					Surface du champs PV : <span style="color: blue;">{{alimentation.surfaceChamps}}</span>
+				</div>
+				<div class="col-md-6 hum">
+					Largeur : <span style="color: blue;">{{alimentation.largeur}}</span>
+				</div>
+				<div class="col-md-6 hum">
+					Surface disponible : <span style="color: blue;">{{alimentation.surfaceDisponible}}</span>
+				</div>
+				<div class="col-md-6 hum">
+					Surface d'un panneau: <span style="color: blue;">{{alimentation.epaisseur}}</span>
+				</div>
+				<div class="col-md-6 hum">
+					Surface puissance crete réelle : <span style="color: blue;">valeur</span>
+				</div>
+				<div class="col-md-6 hum">
+					<a class="btn btn-danger btn-block espace">retour</a>
+				</div>
+				<div class="col-md-6 hum">
+					<a class="btn btn-primary btn-block espace">Faire une Facture</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
