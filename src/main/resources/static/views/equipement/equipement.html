@@ -1,7 +1,16 @@
 
 
-<div class="intro-headers container">
-	<form class="form-horizontal well " ng-submit="addequipement()" method="post">
+<div class="container">
+	<div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="client">Client</a></li>
+			<li><a ui-sref="manuelcity">Coordonnées du lieu</a></li>
+			<li><a ui-sref="equipement">Puissance des équipements</a></li>
+		</ul>
+	</div>
+	<form class="form-horizontal well " ng-submit="addequipement()"
+		method="post">
 		<fieldset>
 			<legend class="center">
 				<h2 style="color: cadetblue">Bilan de puissance de tous les
@@ -176,4 +185,4 @@
 
 	</form>
 </div>
- <!-- {{equipement}} -->
+<!-- {{equipement}} -->

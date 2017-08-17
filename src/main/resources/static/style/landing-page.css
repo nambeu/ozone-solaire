@@ -10,20 +10,34 @@ html {
     height: 100%;
 }
 
+@font-face {
+	font-family: "Clemente";
+	src: url("/fonts/ClementePDab-HairlineItalic.ttf");
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("/fonts/Lato-Thin.ttf");
+}
+	
+
 body,
 h1,
 h2,
 h3,
 h4,
-h5,
+h5,a,
 h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    
 }
 
 .topnav {
-    font-size: 14px;
-    height: 75px; 
+   font-size: 14px;
+    height: 90px; 
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: white;
 }
 
 .lead {
@@ -32,27 +46,47 @@ h6 {
 }
 
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
+    marging-top: -25px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */ 
     text-align: center;
-    color: #f8f8f8;
-    background: url("/image/img/intro-bg.jpg") no-repeat center center;
-    background-size: cover;
+    color: #ffffff;  
 }
 
+ .nav-fond{
+  background-color: #4187c0 ;
+  margin-right : 5px;
+ }
+ 
+.navbar-right span {
+	color: white;
+}
+ 
+ .nav-fond2 {
+  background-color: #009b3e;
+ }
+ 
+ .topnav i{
+   color: white;
+ }
 
  .intro-headers{
-	padding-top: 85px;
-	padding-bottom: 100px;
-	height: 400px;
-	margin-left: 25px;
-	margin-bottom: 15px;
+	padding-bottom: 0px;
+	height:700px;
+	margin:-20px 0 0 0 ;
+	background-color: #f2f7fb;
 }	
 
+ .home-titre {
+    color: #4187c0;
+  }
+  
+  .home-fond2 {
+    background-color: white;
+    height: 270px;
+  }
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
+    padding-top: 6%;
     padding-bottom: 20%;
 }
 
@@ -60,6 +94,7 @@ h6 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
+    color : #009b3e;
 }
 
 .intro-divider {
@@ -70,6 +105,18 @@ h6 {
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    color: #000000;
+}
+
+.intro-message a{
+	color: white;
+	background-color: #009b3e;
+	background-size: cover;
+	font-weight: 700;
+}
+
+.intro-message i {
+	color: white;
 }
 
 @media(max-width:767px) {
@@ -169,13 +216,15 @@ h6 {
     ul.banner-social-buttons > li:last-child {
         margin-bottom: 0;
     }
+    
 }
 
 footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-p.copyright {
-    margin: 15px 0 0;
+    padding: 3% 0 5% 0;
+    background-color:#ffffff ;
+    font-family: "Clemente","Lato",sans-serif;
+    font-weight:900;
+    font-size: 16px;
+    margin: 0 0 0 0;
+    height: 40px;
 }

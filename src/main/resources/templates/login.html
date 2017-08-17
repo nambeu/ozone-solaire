@@ -4,36 +4,88 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet"
 	th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<!-- <link rel="stylesheet"
+	th:href="@{../static/vendor/bootstrap/dist/css/bootstrap.min.css}" /> -->
 <style type="text/css">
-    .logoimg{
-          width: 100%;
-      }
+@font-face {
+	font-family: "Lato";
+	src: th:url("/fonts/Lato-Thin.ttf");
+}
+
+.logoimg {
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+body {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	background-color: #005faa;
+}
+
+.login-home {
+	background-color: white;
+	padding: 35px;
+	border-radius: 5px;
+	margin-left: 26%
+}
+
+.input-submit {
+	color: white;
+	background-color: #009b3e;
+	margin-top: 5px;
+	font-family: Lato;
+	font-size: 14px;
+}
+
+.login-home label {
+	color: #009b3e;
+	font-family: Lato;
+	font-size: 14px;
+}
 </style>
+
 <title>Insert title here</title>
 </head>
 <body>
-    <br/> <br/> <br/> <br/> <br/> <br/>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<img src="image/logo/logoAsecy.png" class="logoimg" />
-			<form method="post" th:action="@{/login}">
-				<div class="form-group">
-					<label>Login</label> <input type="text" class="form-control"
-						name="username" placeholder="enter your login" />
-				</div>
-				<div class="form-group">
-					<label>Password</label> <input type="password" class="form-control"
-						name="password" placeholder="enter your Password" />
-				</div>
+	<div class="container">
+		<br /> <br /> <br /> <br /> <br />
+		<div class="row">
+			<div class="col-md-5 login-home">
+				<img src="image/logo/Logo_NAMBEZ.png" class="logoimg" />
+				<form method="post" th:action="@{/login}">
+					<div class="form-group">
+						<label>Login</label>
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+							</div>
+							<input type="text" class="form-control" name="username"
+								placeholder="Enter your login" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+							</div>
+							<input type="password" class="form-control" name="password"
+								placeholder="Enter your Password" />
+						</div>
+
+					</div>
 					<!-- <div class="form-group">
 					<label>Remember Me</label> <input type="checkbox" />
 				</div>  -->
-				<div class="form-group">
-					<input type="submit" class="form-control btn btn-primary"
-						value="Sign in" />
-				</div>
-			</form>
+					<div class="form-group">
+						<input type="submit"
+							class="form-control btn btn-primary input-submit" value="Sign in" />
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 </body>
-</html> <!-- href="../static/vendor/bootstrap/dist/css/bootstrap.min.css" -->
+</html>
+<!-- href="../static/vendor/bootstrap/dist/css/bootstrap.min.css" -->

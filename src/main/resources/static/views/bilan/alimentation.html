@@ -1,6 +1,17 @@
-<div class="intro-headers">
+<div class="home-alimentation">
+	<div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="client">Client</a></li>
+			<li><a ui-sref="manuelcity">Coordonnées du lieu</a></li>
+			<li><a ui-sref="equipement">Puissance des équipements</a></li>
+			<li><a ui-sref="puissance">Puissance de l'installation</a></li>
+			<li><a ui-sref="dimension">Dimensions des panneaux</a></li>
+			<li><a ui-sref="alimentation">Bilan de l'installation</a></li>
+		</ul>
+	</div>
 	<div>
-		<h1>Resultats des Bilans</h1>
+		<h1 class="text-center">Resultat du Bilan de l'installation</h1>
 	</div>
 	<div class="row" ng-repeat="alimentation in alimentations">
 		<div class="col-md-7">
@@ -67,7 +78,7 @@
 				<div class="col-md-12 tailleblock">
 					<h2>Controlleur de Charge</h2>
 					<div class="row altext">
-						<div class="col-md-6 hum">Tension  Regulateur :</div>
+						<div class="col-md-6 hum">Tension Regulateur :</div>
 						<div class="col-md-6 hum">
 							<span style="color: blue;">{{alimentation.tensionChampPv}}</span>
 						</div>
@@ -100,7 +111,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-7 col-md-offset-3" style="margin-top: 25px; margin-bottom: 15px">
+		<div class="col-md-7 col-md-offset-3"
+			style="margin-top: 25px; margin-bottom: 15px">
 			<h2>Dimension Du panneau Solaire</h2>
 			<div class="row altext">
 				<div class="col-md-6">
