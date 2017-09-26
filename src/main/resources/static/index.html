@@ -2,6 +2,8 @@
 <html ng-app="myApp">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link
@@ -12,7 +14,7 @@
 <link href="style/main.css" rel="stylesheet" />
 <link href="style/home.css" rel="stylesheet" />
 <link href="style/landing-page.css" rel="stylesheet">
-<!-- <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+<link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <style type="text/css">
 [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -44,11 +46,13 @@
 				<div class="nav navbar-nav navbar-right">
 					<ul class="nav navbar-nav nav-fond ">
 						<li><a ui-sref="client"><span>CLIENT</span></a></li>
-						<li><a ui-sref="dimension"><span>DIMENSION</span></a></li>
-						<li><a ui-sref="equipement"><span>EQUIPEMENT</span></a></li>
-						<li><a ui-sref="puissance"><span>PUISSANCE</span></a></li>
-						<li><a ui-sref="city"><span>LOCATION</span></a></li>
+						<!--	<li><a ui-sref="dimension"><span>DIMENSION</span></a></li> -->
+						<!--	<li><a ui-sref="equipement"><span>EQUIPEMENT</span></a></li> -->
+						<!--	<li><a ui-sref="puissance"><span>PUISSANCE</span></a></li>  -->
+						<!--	<li><a ui-sref="city"><span>LOCATION</span></a></li> -->
+						<li><a ui-sref="factureAlim"><span>FACTURE</span></a></li>
 						<li><a ui-sref="alimentation"><span>ALIMENTATION</span></a></li>
+						<li><a><span>AIDE ?</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav nav-fond2">
 						<li><a class="#" href="/logout"><i
@@ -100,5 +104,6 @@
 	<script type="text/javascript" src="views/coordonnee/cibleCtrl.js"></script>
 	<script type="text/javascript"
 		src="views/dimensionpanneau/dimension.js"></script>
+	<script type="text/javascript" src="views/facture/factureAlim.js"></script>
 </body>
 </html>
