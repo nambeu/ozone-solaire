@@ -11,6 +11,14 @@ app.config(function($stateProvider) {
 	})
 });
 
+app.config(function($stateProvider) {
+	$stateProvider.state("factureliste", {
+		url : "/facture_liste",
+		templateUrl : "views/facture/factureliste.html",
+		controller : "factureAlimCtrl"
+	})
+});
+
 // configuration des api
 app.factory("Facture", function($resource) {
 	return $resource("ozone/api/addFactureItems", {
@@ -43,6 +51,15 @@ app
 					$scope.report = function() {
 						$window.location.href = "/";
 					}
+					
+					$scope.listeclient = ClientService.query();
+					
+					 date = new Date();
+					 
+					 $scope.dateFacture = date.getDate();
+					 $scope.month = date.getMonth()  + 1;
+					 $scope.year = date.getFullYear();
+					  
 
 					$scope.montantTotal = 0;
 					$scope.reference = 0;
@@ -101,11 +118,12 @@ app
 											});
 									// $scope.reference ++;
 									console.log($scope.factures.length);
-
+                                    
 									console.log($scope.facture);
 									console.log($scope.facture.quantite);
 									console.log($scope.factures);
-								})
+								});
+						$location.path('/factureAlim');
 					};
 
 					// Suppression d'un equipement dans la facture

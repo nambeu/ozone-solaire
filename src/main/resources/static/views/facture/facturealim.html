@@ -12,16 +12,16 @@
 			<li><a ui-sref="alimentation">Facture Alimentation</a></li>
 		</ul>
 	</div>
-	<h1 class="text-center">Etablissement de la Facture Alimentation
+	<h1 class="text-center"><span class="hidden-xs">Etablissement de la</span> Facture Alimentation
 		Domestique</h1>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-9 col-xs-12 col-sm-12">
 			<h3 ng-repeat="client in clients"> Facture de M. <strong> {{client.lastName}}</strong> </h3>
-			<div>
-			  <table class="table table-bordered"> 
+			<div class="table-responsive">
+			  <table class="table table-bordered table-responsive"> 
 			    <tr>
 			    <td>Reference</td>
 			    <td>Designation</td>
@@ -72,27 +72,27 @@
 								<input type="text" class="form-control" ng-model="facture.designation"
 									placeholder="Designation">
 							</div>
-							<div class=" col-md-3">
+							<div class=" col-md-3 coordonne">
 								<input type="text" class="form-control" ng-model="facture.technique"
 									placeholder="Technique">
 							</div>
-							<div class=" col-md-3">
+							<div class=" col-md-2 coordonne">
 								<input type="text" class="form-control" ng-model="facture.quantite"
 									placeholder="quantité">
 							</div>
-							<div class=" col-md-2">
+							<div class=" col-md-2 coordonne">
 								<input type="text" class="form-control" ng-model="facture.prixUnitaire"
 									placeholder="Prix unitaire">
 							</div>
-							<div class="2">
-							  <button type="submit" class="btn btn-primary">ajouter</button>
+							<div class="col-md-2 coordonne">
+							  <button type="submit" class="btn btn-primary btn-block ">ajouter</button>
 							</div>
 						</div>
 					</fieldset>
 				</form> 
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-xs-12 col-sm-8">
 			<h3>Recap des données</h3>
           <table class="table table-bordered" ng-repeat="alimentation in alimentations">
             <tr>
@@ -109,10 +109,10 @@
             </tr>
           </table>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-12 col-xs-12 col-sm-12">
 			<h2 class="text-center">Validation</h2>
-			<div class="col-md-6"><a class="btn btn-danger btn-block"> effacer</a></div>
-			<div class="col-md-6"><a class="btn btn-success btn-block" target="_blank" href="/ozone/api/report"> imprimer</a></div>
+			<div class="col-md-6 coordonne"><a class="btn btn-danger btn-block"> effacer</a></div>
+			<div class="col-md-6 coordonne"><a class="btn btn-success btn-block" target="_blank" href="/ozone/api/report"> imprimer</a></div>
 		</div>
 	</div>
 </div>

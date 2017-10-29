@@ -10,6 +10,15 @@ app.config(function($stateProvider) {
 	});
 });
 
+app.config(function($stateProvider) {
+	$stateProvider.state("puissancePompage", {
+		url : "/puissance_bilan",
+		templateUrl : "views/puissance/puissancePompage.html",
+		controller : "puissanceCtrl"
+	});
+});
+
+
 // le service
 app.factory("PuissanceService", function($resource){
 	return $resource("/ozone/api/puissance", {id: '@_id'}, {
@@ -28,5 +37,8 @@ app.controller("puissanceCtrl", function($scope, $state, PuissanceService) {
 			console.log($scope.puissance);
 			$state.go('dimension');
 		})
+	}
+	$scope.createPuissancePompage = function(){
+		$state.go("dimension");
 	}
 });

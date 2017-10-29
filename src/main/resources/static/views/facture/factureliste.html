@@ -1,0 +1,51 @@
+
+<div class="container">
+   <div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="factureAlim" class="active"> Créer une nouvelle facture</a></li>
+		</ul>
+	</div>
+	<div class="jumbotron col-xs-12" style="margin-top:15px">
+		<h1>Vos factures <a ui-sref="factureAlim" class="btn btn-danger">NEW</a>  </h1>  
+		<div>
+			<form method="post" class="form-horizontal">
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+						placeholder="rechercher un client" />
+				</div>
+				<div class="col-md-3">
+					<input type="submit" class="btn btn-primary btn-block"
+						value="Rechercher" />
+				</div>
+			</form>
+		</div>
+	</div>
+	 <div class="col-md-10 col-md-offset-1 col-xs-12 " style="font-size: 25px">
+	   <table class="table table-bordered">  
+	       <thead> 
+	         <tr style="font-weight: bold;">
+			    <td>Reference</td>
+			    <td>Date </td>
+			    <td>Client</td>
+			    <td>Montant TTC</td>
+		
+			   
+			    </tr>
+	       </thead>
+	       <tbody>
+	            <tr ng-repeat="client in listeclient">
+			    <td>001</td>
+			    <td>{{dateFacture}} / {{month}} / {{year}} </td>
+			    <td>{{client.lastName}}</td>
+			    <td>{{montantTTC}} FCFA</td>
+			    <td> <a class="btn btn-primary">regarder</a> </td>
+			    <td> <a class="btn btn-danger">supprimer</a> </td>
+			    </tr>
+	       </tbody>
+	   </table>
+	 </div>
+	 <div class="col-md-12 col-xs-12" style="margin-top: 55px; font-size: large; "> 
+	   <p class="text-center" style="color: red;" > Pour bénéficiez de cette fonctionnalité !! Demander la version pro !!!</p>
+	 </div>
+</div>

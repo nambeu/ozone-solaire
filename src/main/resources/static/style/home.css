@@ -1,15 +1,39 @@
 @CHARSET "UTF-8";
 
-.home-breadcrumd  ul{
+.home-breadcrumd  ul {
 	background-color: #f2f7fb;
 	padding: 15px 15px 15px;
 }
 
-.home-alimentation{
+.home-alimentation {
 	padding: 5px 20px 5px 10px;
 	margin: 10px 0px 20px 0px;
 }
 
-.home-alimentation h2,h1{
+.home-alimentation h2, h1 {
 	color: cadetblue;
+}
+
+.image_acceuil {
+	width :550px;
+	height :270px;
+}
+
+.image_logo {
+	width: 235px;
+	height : 60px;
+}
+
+.contenu_accueil {
+	margin: 15px 0 0 0;
+}
+
+/* css dimension panneau */
+
+.dimension_resultat{
+	 margin-top: 25px; margin-bottom: 20px;
+}
+
+.conversion {
+	margin-top: 25px;
 }

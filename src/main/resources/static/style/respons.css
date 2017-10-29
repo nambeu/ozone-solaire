@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+.polop {
+	color : blue;
+}
+
+.image_acceuil , .img-responsive {
+	height :200px;
+	width: 700px;
+}
+
+.home-fond2 {
+	background-color: white;
+	height: 100px;
+}
+
+.intro-header {
+	marging-top: -25px;
+	/* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+	text-align: center;
+	color: #ffffff;
+}
+
+.intro-message {
+	position: relative;
+	padding-top: 6%;
+	padding-bottom: 20%;
+}

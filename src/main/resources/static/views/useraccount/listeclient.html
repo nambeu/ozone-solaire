@@ -1,0 +1,53 @@
+
+<div class="container">
+   <div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="client" class="active"> Créer un nouveau client</a></li>
+		</ul>
+	</div>
+	<div class="jumbotron col-xs-12" style="margin-top:15px">
+		<h1>Liste de vos clients <a ui-sref="client	" class="btn btn-danger">NEW</a>  </h1>  
+		<div>
+			<form method="post" class="form-horizontal">
+				<div class="col-md-8 col-sm-5 col-xs-8">
+					<input type="text" class="form-control"
+						placeholder="rechercher une facture" />
+				</div>
+				<div class="col-md-3 col-sm-5 col-xs-3" >
+					<input type="submit" class="btn btn-primary btn-block"
+						value="Rechercher" />
+				</div>
+			</form>
+		</div>
+	</div>
+	 <div class="col-xs-12 col-md-9 col-md-offset-1" style="font-size: 15px">
+	   <table class="table">  
+	       <thead> 
+	         <tr>
+			    <td>Reference</td>
+			    <td>Noms </td>
+			    <td class="hidden-xs">Prenoms</td>
+			    <td>Email</td>
+			    <td>Telephone</td>
+			    <td class="hidden-xs">Adresse</td>
+			   
+			    </tr>
+	       </thead>
+	       <tbody>
+	            <tr ng-repeat="client in listeclient">
+			    <td>1</td>
+			    <td>{{client.lastName}} </td>
+			    <td class="hidden-xs">{{client.firstName}}</td>
+			    <td>{{client.email}}</td>
+			    <td>{{client.telephone}}</td>
+			    <td class="hidden-xs">{{client.address}}</td>
+			    <td> <a class="btn btn-danger">supprimer</a> </td>
+			    </tr>
+	       </tbody>
+	   </table>
+	 </div>
+	 <div class="col-md-12 col-xs-12" style="margin-top: 55px; font-size: large; "> 
+	   <p class="text-center" style="color: red;" > Pour bénéficiez de cette fonctionnalité !! Demander la version pro !!!</p>
+	 </div>
+</div>

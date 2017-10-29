@@ -21,7 +21,7 @@
 					<div class="form-group">
 						<div class="col-md-12"
 							style="font-size: 20px; color: rgb(128, 128, 128)">
-							<label class="control-label">Longueur</label>
+							<label class="control-label">Longueur <span style="color:red;">*</span></label>
 						</div>
 						<div class="col-md-12">
 							<input type="text" class="form-control" name="longueur"
@@ -42,7 +42,7 @@
 					<div class="form-group">
 						<div class="col-md-12"
 							style="font-size: 20px; color: rgb(128, 128, 128)">
-							<label class="control-label">Largeur</label>
+							<label class="control-label">Largeur <span style="color:red;">*</span></label>
 						</div>
 						<div class="col-md-12">
 							<input type="text" class="form-control" name="largeur"
@@ -67,13 +67,14 @@
 							<input type="reset" class="btn btn-danger btn-block btn-lg"
 								value="annuler">
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 dimension">
 							<input type="submit" class="btn btn-primary btn-block btn-lg"
 								ng-disabled="form.$error.required" value="valider">
 						</div>
 					</div>
 				</fieldset>
 			</form>
+			<p><strong>NB :</strong> Champ obligatoire <span style="color:red;">*</span></p>
 		</div>
 	</div>
 	<!-- {{dimension}} -->

@@ -6,7 +6,7 @@
 			<li><a ui-sref="home">Accueil</a></li>
 			<li><a ui-sref="client">Client</a></li>
 			<li><a ui-sref="manuelcity">Coordonnées du lieu</a></li>
-			<li><a ui-sref="equipement">Puissance des équipements</a></li>
+			<li><a ui-sref="equipementManuel">Puissance des équipements (modèle incomplet)</a></li>
 		</ul>
 	</div>
 	<form class="form-horizontal well " ng-submit="addequipement()"
@@ -18,7 +18,7 @@
 			</legend>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label class="col-md-3 control-label">TELEVISEURS</label>
+					<label class="col-md-3 control-label">TELEVISEURS<span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.televiseur.puissance" />
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">REFRIGERATEURS</label>
+					<label class="col-md-3 control-label">REFRIGERATEURS<span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.refrigerateur.puissance" />
@@ -48,7 +48,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">CLIMATISEURS</label>
+					<label class="col-md-3 control-label">CLIMATISEURS<span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.climatiseur.puissance" />
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">CONGELATEURS</label>
+					<label class="col-md-3 control-label">CONGELATEURS<span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.congelateur.puissance" />
@@ -78,7 +78,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">RADIO</label>
+					<label class="col-md-3 control-label">RADIO <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.radio.puissance" />
@@ -95,7 +95,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label class="col-md-3 control-label">LAMPES</label>
+					<label class="col-md-3 control-label">LAMPES <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.lampe.puissance" />
@@ -110,7 +110,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">DESTOPS</label>
+					<label class="col-md-3 control-label">DESTOPS <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.destop.puissance" />
@@ -125,7 +125,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">MODEMS</label>
+					<label class="col-md-3 control-label">MODEMS <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.modem.puissance" />
@@ -140,7 +140,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">LAPTOPS</label>
+					<label class="col-md-3 control-label">LAPTOPS <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.laptop.puissance" />
@@ -155,7 +155,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-3 control-label">AUTRES</label>
+					<label class="col-md-3 control-label">AUTRES <span style="color:red;">*</span></label>
 					<div class="col-md-3">
 						<input type="text" placeholder="puissance" class="form-control"
 							ng-model="equipement.autre.puissance" />
@@ -184,5 +184,6 @@
 		</fieldset>
 
 	</form>
+	<p><strong>NB :</strong> Champ obligatoire <span style="color:red;">*</span></p>
 </div>
 <!-- {{equipement}} -->

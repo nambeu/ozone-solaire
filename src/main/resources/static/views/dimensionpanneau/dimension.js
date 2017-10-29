@@ -10,6 +10,14 @@ app.config(function($stateProvider){
 	})
 });
 
+app.config(function($stateProvider){
+	$stateProvider.state("dimensionPompage", {
+		url:"/dimension",
+		templateUrl : "views/dimensionpanneau/dimensionPompage.html",
+		controller :"dimensionCtrl"
+	})
+});
+
 app.factory("DimensionService", function($resource){
 	return $resource("/ozone/api/dimensionpanneau/:id", {id: '@_id'},{
 		update : {
@@ -26,4 +34,8 @@ app.controller("dimensionCtrl", function($scope, DimensionService, $state){
 			 $state.go('alimentation');
 	 });
 	 };
+	 
+	 $scope.dimensionvalidPompage = function(){
+		 $state.go('pompage');
+	 }
 });

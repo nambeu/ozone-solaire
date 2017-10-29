@@ -11,9 +11,9 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 well">
-			<h1 style="color: cadetblue;">Bilan des puissances de
-				l'installation</h1>
-			<form class="form-horizontal" method="post"
+			<h1 style="color: cadetblue;">Bilan des puissances <span class="hidden-xs hidden-sm" >de
+				l'installation</span> </h1>
+			<form class="form-horizontal" method="post" name="form"
 				ng-submit="createPuissance()">
 				<fieldset>
 					<legend>
@@ -21,27 +21,28 @@
 					</legend>
 					<div class="form-group">
 						<div class="col-md-4">
-							<label class="control-label">TENSION DU PV</label>
+							<label class="control-label">TENSION DU PV <span style="color:red;">*</span></label>
 						</div>
-						<div class="col-md-7">
-							<input type="text" placeholder="Tension Pv" class="form-control"
+						<div class="col-md-7 input-group">
+							<input type="text" placeholder="Tension Pv" class="form-control" required="required"
 								ng-model="puissance.tensionPv" />
-						</div>
-						<div class="col-md-1">
-							<span>watts</span>
+								<div class="input-group-addon" style="color: black; width:15px">
+								<span  aria-hidden="true">V</span>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-4">
-							<label class="control-label">PUISSANCE DU PV</label>
+							<label class="control-label">PUISSANCE DU PV <span style="color:red;">*</span></label>
 						</div>
-						<div class="col-md-7">
-							<input type="text" class="form-control"
+						<div class="col-md-7 input-group">
+							<input type="text" class="form-control" required="required"
 								placeholder="puissance du Pv" ng-model="puissance.puissancePv" />
+								<div class="input-group-addon" style="color: black; width:15px">
+								<span  aria-hidden="true">W</span>
+							</div>
 						</div>
-						<div class="col-md-1 center">
-							<span>watts</span>
-						</div>
+						
 					</div>
 					<legend>
 						<h3 style="color: cadetblue; margin-top: 35px">Batteries
@@ -49,40 +50,43 @@
 					</legend>
 					<div class="form-group">
 						<div class="col-md-4">
-							<label class="control-label">TENSION BATTERIE</label>
+							<label class="control-label">TENSION BATTERIE <span style="color:red;">*</span></label>
 						</div>
-						<div class="col-md-7">
-							<input type="text" class="form-control" placeholder="Tension Ba"
+						<div class="col-md-7 input-group">
+							<input type="text" class="form-control" placeholder="Tension Batterie" required="required"
 								ng-model="puissance.tensionBatterie" />
+								<div class="input-group-addon">
+								<span style="color: black;" aria-hidden="true">V</span>
+							</div>
 						</div>
-						<div class="col-md-1">
-							<span>volts</span>
-						</div>
+		
 					</div>
 					<div class="form-group">
 						<div class="col-md-4">
-							<label class="control-label">CAPACITE BATTERIE</label>
+							<label class="control-label">CAPACITE BATTERIE <span style="color:red;">*</span></label>
 						</div>
-						<div class="col-md-7">
-							<input type="text" class="form-control" placeholder="capacité Ba"
+						<div class="col-md-7 input-group">
+							<input type="text" class="form-control" placeholder="capacité Batterie" required="required"
 								ng-model="puissance.capaciteBatterie" />
+								<div class="input-group-addon">
+								<span  aria-hidden="true">Ah</span>
+							</div>
 						</div>
-						<div class="col-md-1">
-							<span>watts</span>
-						</div>
+	
 					</div>
 					<div class="form-group" style="margin-top: 30px">
 						<div class="col-md-6">
 							<input type="reset" class="btn btn-danger btn-block btn-lg"
 								value="Annuler" />
 						</div>
-						<div class="col-md-6">
-							<input type="submit" class=" btn btn-primary btn-block btn-lg"
+						<div class="col-md-6 dimension">
+							<input type="submit" class=" btn btn-primary btn-block btn-lg" ng-disabled="form.$error.required"
 								value="Valider" />
 						</div>
 					</div>
 				</fieldset>
 			</form>
+			<p><strong>NB :</strong> Champ obligatoire <span style="color:red;">*</span></p>
 		</div>
 	</div>
 	<!-- {{puissance}} -->

@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+
+.polop {
+	color : blue;
+}
+
+.image_acceuil , .img-responsive {
+	height :200px;
+	width: 700 px;
+	
+}
+
+.home-fond2 {
+	background-color: white;
+	height: 100px;
+}
+
+.intro-header {
+	marging-top: -20px;
+	/* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+	text-align: center;
+	color: #ffffff;
+}
+
+.intro-headers {
+	padding-bottom: 0px;
+	height: 1500px;
+	margin: -20px 0 0 0;
+	background-color: #f2f7fb;
+}
+
+.intro-message {
+	position: relative;
+	padding-top: 6%;
+	padding-bottom: 20%;
+}
+
+footer {
+		padding: 3% 0 5% 0;
+		background-color: #ffffff;
+		font-family: "Clemente", "Lato", sans-serif;
+		font-weight: 900;
+		font-size: 16px;
+		margin: 0 0 0 0;
+		height: 40px;
+	}
+	
+/*  alimentation page*/
+
+.tailleblock {
+	height: 280px;
+	margin-top: 5px;
+}
+
+.hum {
+	margin-top: 8px
+}
+
+
+.dimension_resultat{
+	 margin-top: 0px; margin-bottom: 0px;
+}
+
+.conversion {
+	margin-top: -25px;
+}
+
+/*  dimension panneau page*/
+
+ .dimension{
+   margin-top: 15px;
+ }
+ 
+ /*  coordonnées page*/
+ 
+ .coordonne {
+   margin-top: 15px
+ }
+ 
+ /*  navigation page*/
+ .topnav {
+	font-size: 14px;
+	height: 90px;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: white;
+}
+ 
+ #bs-example-navbar-collapse-1 {
+	margin-top: 0px;
+}
+
+.nav-fond2 {
+	background-color: #009b3e;
+}
+
+.nav-fond {
+	background-color: #4187c0;
+	margin-right: 0px;
+}
+ 

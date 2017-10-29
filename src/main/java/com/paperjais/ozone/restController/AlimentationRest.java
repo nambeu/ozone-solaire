@@ -16,13 +16,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.paperjais.ozone.entity.ClientDTO;
 import com.paperjais.ozone.entity.Equipement;
 import com.paperjais.ozone.entity.Facture;
 import com.paperjais.ozone.entity.FeuilleCalcul;
+import com.paperjais.ozone.entity.Materiel;
 import com.paperjais.ozone.restController.utils.HeaderUtil;
 import com.paperjais.ozone.service.AlimentationDomestic;
 
@@ -39,15 +39,20 @@ public class AlimentationRest {
 
 	@Autowired
 	private Facture factureService;
-	
+
 	@Autowired
 	private ClientDTO client1;
 	
+	@Autowired
+    private Materiel materiel1;
+
 	private List<ClientDTO> listClient = new ArrayList<ClientDTO>();
 
 	private List<FeuilleCalcul> liste = new ArrayList<FeuilleCalcul>();
 
 	private List<Equipement> listeEquipement = new ArrayList<Equipement>();
+
+	private List<Materiel> listeMateriel = new ArrayList<Materiel>();
 
 	private long montantTotal = 0;
 	private long taxe, montantTTC;
@@ -90,7 +95,7 @@ public class AlimentationRest {
 		}
 		feuille1.setEnergie(feuille.getEnergie());
 		feuille1.setEnergieMax(feuille.getEnergieMax());
-
+        listeMateriel.clear();
 		return ResponseEntity
 				.created(new URI("/ozone/api/energie/" + feuille1.getId()))
 				.headers(
@@ -248,10 +253,10 @@ public class AlimentationRest {
 								equipement.getId().toString()))
 				.body(equipement);
 	}
-	
+
 	// recuperer la liste des equipements de la facture
-	@RequestMapping(value="/addFactureItems", method=RequestMethod.GET)
-	public List<Equipement> getListeEquipement(){
+	@RequestMapping(value = "/addFactureItems", method = RequestMethod.GET)
+	public List<Equipement> getListeEquipement() {
 		return listeEquipement;
 	}
 
@@ -273,7 +278,7 @@ public class AlimentationRest {
 				listeEquipement.remove(equipement1);
 			}
 		}
-		System.out.println("removeList: "+listeEquipement);
+		System.out.println("removeList: " + listeEquipement);
 		return ResponseEntity
 				.created(new URI("/removeFactureItems" + equipement.getId()))
 				.headers(
@@ -281,8 +286,8 @@ public class AlimentationRest {
 								equipement.getId().toString()))
 				.body(equipement);
 	}
-    
-	// générer la facture en pdf 
+
+	// générer la facture en pdf
 	@RequestMapping(value = "/report", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<InputStreamResource> generatePdf() throws IOException {
 
@@ -290,7 +295,7 @@ public class AlimentationRest {
 		System.out.println(listeEquipement.size());
 		System.out
 				.println("montantTotal1: " + factureService.getMontantTotal());
-		
+
 		montantTotal = 0;
 
 		if (listeEquipement.size() > 0) {
@@ -310,7 +315,8 @@ public class AlimentationRest {
 		System.out
 				.println("montantTotal1: " + factureService.getMontantTotal());
 		ByteArrayInputStream bis = com.paperjais.ozone.pdf.GeneratePdfReport
-				.factureReport(listeEquipement, factureService, client1, feuille1);
+				.factureReport(listeEquipement, factureService, client1,
+						feuille1);
 		listeEquipement.clear();
 		long reset = 0;
 		factureService.setMontantTotal(reset);
@@ -325,9 +331,9 @@ public class AlimentationRest {
 				.body(new InputStreamResource(bis));
 
 	}
-	
-	@RequestMapping(value="/client", method = org.springframework.web.bind.annotation.RequestMethod.POST)
-//	@ResponseStatus(org.springframework.http.HttpStatus.CREATED)
+
+	@RequestMapping(value = "/client", method = org.springframework.web.bind.annotation.RequestMethod.POST)
+	// @ResponseStatus(org.springframework.http.HttpStatus.CREATED)
 	public ResponseEntity<ClientDTO> addCient(@RequestBody ClientDTO client)
 			throws URISyntaxException {
 
@@ -344,16 +350,70 @@ public class AlimentationRest {
 		client1.setTelephone(client.getTelephone());
 		listClient.clear();
 		listClient.add(client);
-		
-		System.out.println("client :"+client);
-		return ResponseEntity.created(new URI("/ozone/api/client/" + client1.getID()))
-				.headers(HeaderUtil.createEntityCreationAlert("client", client1.getID().toString()))
-				.body(client1);
+
+		System.out.println("client :" + client);
+		return ResponseEntity
+				.created(new URI("/ozone/api/client/" + client1.getID()))
+				.headers(
+						HeaderUtil.createEntityCreationAlert("client", client1
+								.getID().toString())).body(client1);
 
 	}
 
-	@RequestMapping(value="/client" ,method = org.springframework.web.bind.annotation.RequestMethod.GET)
+	@RequestMapping(value = "/client", method = org.springframework.web.bind.annotation.RequestMethod.GET)
 	public List<ClientDTO> getClient() {
 		return listClient;
 	}
+
+	// ajouter un materiel dans les equipements
+	@RequestMapping(value = "/addMaterielItems", method = RequestMethod.POST)
+	public ResponseEntity<Materiel> addFacture(@RequestBody Materiel materiel)
+			throws URISyntaxException {
+		if (materiel.getId() == null) {
+			return ResponseEntity.badRequest()
+					.header("failure", "a new user cannot by have that id")
+					.body(null);
+		}
+		System.out.println(materiel);
+		listeMateriel.add(materiel);
+
+		return ResponseEntity
+				.created(new URI("/addMaterielItems" + materiel.getId()))
+				.headers(
+						HeaderUtil.createEntityCreationAlert("equipement",
+								materiel.getId().toString())).body(materiel);
+	}
+
+	// recuperer la liste des materiels dans les equipements
+	@RequestMapping(value = "/addMaterielItems", method = RequestMethod.GET)
+	public List<Materiel> getListeMateriel() {
+		return listeMateriel;
+	}
+	
+	// supprimer un materiel de la facture
+		@RequestMapping(value = "/removeMaterielItems", method = RequestMethod.POST)
+		public ResponseEntity<Materiel> removeFactureItems(
+				@RequestBody Materiel materiel) throws URISyntaxException {
+			if (materiel.getId() == null) {
+				return ResponseEntity.badRequest()
+						.header("failure", "a new user cannot by have that id")
+						.body(null);
+			}
+
+			for (int i = 0; i < listeMateriel.size(); i++) {
+				if (listeMateriel.get(i).getDesignation()
+						.equals(materiel.getDesignation())) {
+					materiel1 = listeMateriel.get(i);
+					System.out.println("materiel11 : " + materiel1);
+					listeMateriel.remove(materiel1);
+				}
+			}
+			System.out.println("removeList: " + listeMateriel);
+			return ResponseEntity
+					.created(new URI("/removeMaterielItems" + materiel.getId()))
+					.headers(
+							HeaderUtil.createEntityCreationAlert("materiel",
+									materiel.getId().toString()))
+					.body(materiel);
+		}
 }

@@ -10,12 +10,21 @@ app.config(function($stateProvider){
     });
  });
 
+app.config(function($stateProvider){
+    $stateProvider.state("listeClient", {
+       url : "/listeclient",
+        templateUrl : "views/useraccount/listeclient.html",
+        controller : "clientCtrl"
+    });
+ });
+
 app.factory("ClientService", function($resource){
 	return $resource("/ozone/api/client/:id", {id: '@_id'},{
 		update : {
 			method : 'PUT'
 		}
 		
-	})
-})
+	});
+});
+
 

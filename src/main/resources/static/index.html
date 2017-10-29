@@ -3,17 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	content="width=device-width,  initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<!-- <link href="vendor/bootstrap/dist/css/bootstrap.min.css"
-	rel="stylesheet" /> -->
+<link href="vendor/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
 <link href="style/main.css" rel="stylesheet" />
 <link href="style/home.css" rel="stylesheet" />
 <link href="style/landing-page.css" rel="stylesheet">
+<link href="style/respons.css" rel="stylesheet"
+	media="screen and (max-width :992px)" />
+<link href="style/responsive.css" rel="stylesheet"
+	media="screen and (max-width :767px)" />
 <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <style type="text/css">
@@ -26,32 +30,37 @@
 <body ng-cloak class="ng-cloak">
 
 
-	<nav class="navbar navbar-default navbar-static-top topnav"
+	  <nav class="navbar navbar-default navbar-static-top topnav "
 		role="navigation">
-		<div class="container topnav">
+		<div class="container ">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
+				<a class="navbar-brand " href="#"><img alt="logo"
+					class=" image_logo" src="image/logo/Logo_NAMBEZ.png"></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+						class="icon-bar"> </span> <span
+						class="icon-bar"> </span><span
+						class="icon-bar"> </span>
+
 				</button>
-				<a class="navbar-brand topnav" href="#"><img alt="logo"
-					src="image/logo/Logo_NAMBEZ.png" width="235px" height="60px"></a>
+
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1" style="margin-top: 15px">
+			<div class=" navbar-collapse collapse"
+				id="bs-example-navbar-collapse-1">
 				<div class="nav navbar-nav navbar-right">
 					<ul class="nav navbar-nav nav-fond ">
-						<li><a ui-sref="client"><span>CLIENT</span></a></li>
+
+						<li><a ui-sref="listeClient"><span>CLIENTS</span> </a></li>
+                       <li><a ui-sref="factureliste"><span>FACTURES</span></a></li>
 						<!--	<li><a ui-sref="dimension"><span>DIMENSION</span></a></li> -->
 						<!--	<li><a ui-sref="equipement"><span>EQUIPEMENT</span></a></li> -->
 						<!--	<li><a ui-sref="puissance"><span>PUISSANCE</span></a></li>  -->
-						<!--	<li><a ui-sref="city"><span>LOCATION</span></a></li> -->
-						<li><a ui-sref="factureAlim"><span>FACTURE</span></a></li>
-						<li><a ui-sref="alimentation"><span>ALIMENTATION</span></a></li>
+						<li><a ui-sref="equipementManuel"><span>Equipement
+							</span></a></li>
+						<li><a ui-sref="alimentation"><span>DIMENSIONNEMENT</span></a></li>
 						<li><a><span>AIDE ?</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav nav-fond2">
@@ -64,11 +73,15 @@
 		</div>
 		<!-- /.container -->
 	</nav>
+	  
 
-	<div class="intro-headers">
-		<ui-view></ui-view>
-	</div>
-	<footer>
+	<!-- headers -->
+	  <div class="intro-headers">
+	     <ui-view></ui-view>
+	  </div>
+		
+	
+	<footer class="col-md-12 col-xs-12 col-sm-12">
 		<div class="text-center">
 			<p>
 				Mentions Légales | Politiques de protection des données à caractères
@@ -102,6 +115,7 @@
 	<script type="text/javascript" src="js/service/feuille.js"></script>
 	<script type="text/javascript" src="views/bilan/alimentation.js"></script>
 	<script type="text/javascript" src="views/coordonnee/cibleCtrl.js"></script>
+	<script type="text/javascript" src="views/besoin/parametre.js"></script>
 	<script type="text/javascript"
 		src="views/dimensionpanneau/dimension.js"></script>
 	<script type="text/javascript" src="views/facture/factureAlim.js"></script>

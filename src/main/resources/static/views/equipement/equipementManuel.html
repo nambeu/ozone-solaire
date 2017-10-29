@@ -1,0 +1,105 @@
+
+<div>
+	<div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="client">Client</a></li>
+			<li><a ui-sref="manuelcity">Coordonnées du lieu</a></li>
+			<li><a ui-sref="equipementManuel">Puissance des équipements</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h2 class="text-center" style="color: cadetblue;">Bilan de puissance de tous les équipements de l'installation</h2>
+			<div>
+				<table class="table table-bordered">
+					<tr>
+						<td>Reference</td>
+						<td>Equipement</td>
+						<td>Puissance</td>
+						<td>quantité</td>
+						<td>Temps</td>
+						<td>Effacer</td>
+					</tr>
+
+					<tr ng-repeat="materiel in materiels">
+						<td>reference</td>
+						<td>{{materiel.designation}}</td>
+						<td>{{materiel.puissance}}</td>
+						<td>{{materiel.quantite}}</td>
+						<td>{{materiel.temps}}</td>
+						<td align="center"><a ng-click="supprimer(materiel.designation)"><span
+								class="glyphicon glyphicon-remove" style="color: red;"></span></a></td>
+					</tr>
+
+					<tr>
+						<td colspan="6">.</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" align=center style="font-size: 20px;">Puissance
+							Maximum</td>
+						<td colspan="3" align=center bgcolor="#4187c0"
+							style="color: white;">{{equip.energieMax}}</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" align=center style="font-size: 20px">Energie
+							Maximum</td>
+						<td colspan="3" align=center bgcolor="#4187c0"
+							style="color: white;">{{equip.energie}}</td>
+					</tr>
+
+				</table>
+			</div>
+			<div></div>
+
+		</div>
+		<div class="col-md-3">
+			<h1 style="margin-bottom: 15px;">
+				<a ui-sref="equipement" style=" color: white;" class="btn btn-danger btn-block">Modele complet</a>
+			</h1>
+			<form method="post" ng-submit="addEquipment()" name="formEquipement">
+				<fieldset>
+					<legend style="color: cadetblue;">Ajouter un Equipement</legend>
+
+					<div class="form-group">
+						<input type="text" class="form-control" required="required"
+							ng-model="materiel.designation" placeholder="Equipement">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" required="required"
+							ng-model="materiel.puissance" placeholder="Puissance de l'equipement">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" required="required"
+							ng-model="materiel.quantite" placeholder="Quantité">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" required="required"
+							ng-model="materiel.temps" placeholder="Temps d'utilisation en heures">
+					</div>
+					<div>
+						<input type="submit" class="btn btn-primary btn-block" ng-disabled="formEquipement.$error.required" value="ajouter" />
+					</div>
+                    
+				</fieldset>
+			</form>
+			<p style="margin-top: 10px; color : black;">NB : Remplissez tous les Champs  <span style="color:red;">!!!</span></p>
+		</div>
+		<div class="col-md-12">
+			<h2 class="text-center">Validation</h2>
+			<div class="col-md-6">
+				<a class="btn btn-danger btn-block">.</a>
+			</div>
+			<div class="col-md-6">
+				<a class="btn btn-success btn-block" style="font-size:55 px; "  ng-click="validerMateriel()">
+					valider</a>
+			</div>
+		</div>
+	</div>
+</div>

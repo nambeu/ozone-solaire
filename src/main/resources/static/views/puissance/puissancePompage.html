@@ -1,0 +1,90 @@
+
+<div class="container">
+	<div class="home-breadcrumd">
+		<ul class="breadcrumb">
+			<li><a ui-sref="home">Accueil</a></li>
+			<li><a ui-sref="client">Client</a></li>
+			<li><a ui-sref="manuelcity">Coordonnées du lieu</a></li>
+			<li><a ui-sref="equipement">Besoin</a></li>
+			<li><a ui-sref="puissance">Puissance de l'installation</a></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 well">
+			<h1 style="color: cadetblue;">Bilan des puissances <span class="hidden-xs hidden-sm" >de
+				l'installation</span> </h1>
+			<form class="form-horizontal" method="post"
+				ng-submit="createPuissancePompage()">
+				<fieldset>
+					<legend>
+						<h3 style="color: cadetblue">Panneaux solaires</h3>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">TENSION DU PV</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" placeholder="Tension Pv" class="form-control"
+								ng-model="puissance.tensionPv" />
+						</div>
+						<div class="col-md-1">
+							<span class="hidden-xs hidden-sm" >watts</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">PUISSANCE DU PV</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control"
+								placeholder="puissance du Pv" ng-model="puissance.puissancePv" />
+						</div>
+						<div class="col-md-1 center">
+							<span class="hidden-xs hidden-sm" >watts</span>
+						</div>
+					</div>
+					<legend>
+						<h3 style="color: cadetblue; margin-top: 35px">Batteries
+							solaires étanches</h3>
+					</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">TENSION BATTERIE</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control" placeholder="Tension Ba"
+								ng-model="puissance.tensionBatterie" />
+						</div>
+						<div class="col-md-1">
+							<span class="hidden-xs hidden-sm" >volts</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label class="control-label">CAPACITE BATTERIE</label>
+						</div>
+						<div class="col-md-7">
+							<input type="text" class="form-control" placeholder="capacité Ba"
+								ng-model="puissance.capaciteBatterie" />
+						</div>
+						<div class="col-md-1">
+							<span class="hidden-xs hidden-sm" >watts</span>
+						</div>
+					</div>
+					<div class="form-group" style="margin-top: 30px">
+						<div class="col-md-6">
+							<input type="reset" class="btn btn-danger btn-block btn-lg"
+								value="Annuler" />
+						</div>
+						<div class="col-md-6 dimension">
+							<input type="submit" class=" btn btn-primary btn-block btn-lg"
+								value="Valider" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- {{puissance}} -->
+</div>
+

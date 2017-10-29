@@ -12,7 +12,7 @@ app.config(function($stateProvider){
 		url:"/city_manuel",
 		templateUrl : "views/coordonnee/cityManuel.html",
 		controller : "manuelCtrl"
-	});
+	})
 });
 
 
@@ -22,4 +22,5 @@ app.factory("CityService", function($resource){
 			method : 'PUT'
 		}
 	})
-})
+});
+

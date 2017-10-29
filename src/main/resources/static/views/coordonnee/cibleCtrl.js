@@ -15,7 +15,8 @@ app.controller("manuelCtrl", function($scope, CityService, $state){
 	 $scope.valid = function(){
 		 $scope.city.$save( function(){
 			 console.log($scope.city);
-			 $state.go('equipement');
-		 })
-	 }
+			 $state.go('equipementManuel');
+		 });
+	 };
+	
 });
